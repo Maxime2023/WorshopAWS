@@ -15,7 +15,7 @@ SetUp
 Utiliser la commande suivante sur votre bureau : « npx create-react-app leNomQueVousVoulez »
 Une fois à la racine de votre projet effectuez la commande suivante :
 
-https://www.npmjs.com/package/axios
+npm i axios et npm i antd
 
 Pour lancer l'application web la commande est la suivante : npm start,
 si des problemes apparraissent faites un npm i, puis de nouveau npm start.
