@@ -1,7 +1,36 @@
 import json
+import random
+
+def cutStr(str, nbr):
+    #code qui decoupe str en fonction de nbr
+
 
 def lambda_handler(event, context):
+    if event['queryStringParameters']['path'] == "nbr":
+        print("laaaa")
+        return {
+            'statusCode': 200,
+            'headers': {
+                "Access-Control-Allow-Origin" : event['headers']['origin'],
+                "Access-Control-Allow-Credentials" : True
+            },
+            'body': json.dumps(#code qui envoi un nombre aléatoire)
+        }
+    if event['queryStringParameters']['path'] == "str":
+        return {
+            'statusCode': 200,
+            'headers': {
+                "Access-Control-Allow-Origin" : event['headers']['origin'],
+                "Access-Control-Allow-Credentials" : True
+            },
+            'body': json.dumps(cutStr(event['queryStringParameters']['str'], event['queryStringParameters']['cut']))
+        }
+
     return {
-        'statusCode': 200,
-        'body': json.dumps('lambda')
+        'statusCode': 400,
+        'headers': {
+                "Access-Control-Allow-Origin" : event['headers']['origin'],
+                "Access-Control-Allow-Credentials" : True
+        },
+        'body': json.dumps('missing parameters')
     }
